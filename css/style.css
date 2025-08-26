@@ -23,18 +23,35 @@ body {
   color: var(--texto-principal);
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;   
+  overflow-y: auto;    
+}
+
+.mobile-nav-panel {
+  overflow-y: auto; 
+}
+
+
 .navbar {
   background-color: var(--cor-destaque);
   padding: 1.5rem 2rem;
+  width: 100%;       
+  margin: 0;        
+  box-sizing: border-box;
 }
 
 .nav-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto;     
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  width: 100%;
 }
 
 .nav-menus-container {
@@ -88,59 +105,42 @@ body {
 .hero-placeholder {
   height: 60vh;
   background-color: var(--fundo-placeholder);
-  margin: 2rem;
-  border-radius: 8px;
+  margin: 0;           
+  border-radius: 0;    
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
+  width: 100%;        
 }
 
-mobile-menu, .mobile-nav-panel {
+.mobile-menu, .mobile-nav-panel {
   display: none; 
 }
 
-@media (max-width: 1200px) {
-  :root {
-    --espacamento-esquerdo: 6rem;
-    --espacamento-direito: 6rem;
-  }
-}
-
-@media (max-width: 968px) {
-  :root {
-    --espacamento-esquerdo: 4rem;
-    --espacamento-direito: 4rem;
-  }
-  
-  .nav-menu a {
-    padding: 0 0.8rem;
-    font-size: 1.3rem;
-  }
-}
-
 @media (max-width: 768px) {
-  .nav-menus-container {
+  .nav-menu-left, .nav-menu-right {
     display: none;
   }
   
-  .navbar {
-    background: var(--fundo-navbar);
+  .nav-container {
+      justify-content: space-between;
   }
 
   .logo {
-    position: static;
-    transform: none;
-    text-align: left;
+    width: auto; 
     padding: 0;
+    position: static;   
+    transform: none;   
+    text-align: left;    
   }
 
   .mobile-menu {
     display: block;
     cursor: pointer;
     z-index: 100;
+    margin-left: auto;
   }
-  
   .mobile-menu div {
     width: 30px;
     height: 2px;
@@ -163,45 +163,130 @@ mobile-menu, .mobile-nav-panel {
     transition: transform 0.4s ease-in-out;
     z-index: 99;
   }
-  
   .mobile-nav-panel.active {
     transform: translateY(0); 
   }
-  
   .mobile-nav-panel ul {
-      list-style: none;
-      padding: 0;
-      text-align: center;
+    list-style: none;
+    padding: 0;
+    text-align: center;
   }
-  
   .mobile-nav-panel li {
-      margin: 2rem 0;
+    margin: 2rem 0;
   }
-  
   .mobile-nav-panel a {
-      color: var(--texto-principal);
-      text-decoration: none;
-      font-size: 2rem;
-      font-weight: 500;
+    color: var(--texto-principal);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
   }
 
   .mobile-menu.active .line1 {
     transform: rotate(-45deg) translate(-5px, 6px);
   }
-  
   .mobile-menu.active .line2 {
     opacity: 0;
   }
-  
   .mobile-menu.active .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
   }
   
   body.no-scroll {
-      overflow: hidden;
+    overflow: hidden;
   }
-  
-  .nav-container {
-    justify-content: space-between;
+}
+
+
+
+.services {
+  padding: 4rem 2rem; 
+  text-align: center;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--fundo-site);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--fundo-site);
+  margin-bottom: 3rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 2rem; 
+}
+
+.card {
+  background-color: var(--fundo-card);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  text-align: left;
+}
+
+.card-image-placeholder {
+  width: 100%;
+  padding-top: 75%; 
+  background-color: var(--borda-suave);
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  color: var(--fundo-site);
+  margin-bottom: 0.75rem;
+}
+
+.card-summary {
+  font-size: 1rem;
+  color: var(--fundo-site);
+  line-height: 1.6;
+  flex-grow: 1; 
+  margin-bottom: 1rem;
+}
+
+.card-learn-more {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cor-destaque);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.card-learn-more:hover {
+  opacity: 0.8;
+}
+
+
+@media (max-width: 992px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile screens: 1 column */
+@media (max-width: 576px) {
+  .services {
+    padding: 3rem 1rem;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .section-title {
+    font-size: 2rem;
   }
 }
