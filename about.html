@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 
@@ -26,7 +27,7 @@
 
                 <ul class="nav-menu nav-menu-right">
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#contact-info-wrapper">Contact</a></li>
                 </ul>
                 
                 <div class="mobile-menu">
@@ -37,18 +38,20 @@
             </div>
         </nav>
 
+            <div class="mobile-nav-panel">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#contact-info-wrapper">Contact</a></li>
+                </ul>
+            </div>
+
         <div class="hero-placeholder">
             </div>
     </header>
 
-    <div class="mobile-nav-panel">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
+
 
     <main>
         </main>
@@ -178,7 +181,67 @@
             <div class="carousel-dots"></div> </div>
     </section>
 
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
 
+                <div class="contact-form-wrapper">
+                    <h2 class="contact-title">Envie uma Mensagem</h2>
+                    <p class="contact-subtitle">Ficou com alguma dúvida ou quer agendar uma conversa? Preencha o formulário abaixo.</p>
+                    <form action="#" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Enviar</button>
+                    </form>
+                </div>
+
+                <div class="contact-info-wrapper">
+                    <h2 class="contact-title" id="contact-info-wrapper">Outras Formas de Contato</h2>
+                    <p class="contact-subtitle">Você também pode me encontrar aqui:</p>
+                    <ul class="contact-info-list">
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+5511999998888">(11) 99999-8888</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contato@menteserena.com">contato@menteserena.com</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/5511999998888" target="_blank">Agendar via WhatsApp</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Atendimento Online e em São Paulo, SP</span>
+                        </li>
+                    </ul>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.145833132043!2d-46.65657158440697!3d-23.56309936754161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c97763!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1671821034502!5m2!1spt-BR!2sbr" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -228,7 +291,7 @@
 
 
 
-    <script src="/js/script.js"></script>
-    <script src="/js/carousel.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/carousel.js"></script>
 </body>
 </html>
