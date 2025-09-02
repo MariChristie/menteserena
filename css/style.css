@@ -25,13 +25,19 @@ body {
   color: var(--texto-principal);
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden;   
-  overflow-y: auto;    
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
+
+
+html, body {
+  overscroll-behavior: none;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
 
 .mobile-nav-panel {
   overflow-y: auto; 
@@ -275,6 +281,14 @@ body.no-scroll {
   flex-direction: column;
   align-items: flex-start; 
   text-align: left;
+}
+
+.card img {
+  width: 100%;             
+  aspect-ratio: 4 / 3;     
+  object-fit: cover;     
+  border-radius: 6px;     
+  margin-bottom: 1.5rem;   
 }
 
 .card-image-placeholder {
