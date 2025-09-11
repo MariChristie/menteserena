@@ -245,11 +245,69 @@ body.no-scroll {
 }
 
 
-.hero-image {
+.hero-section {
+  position: relative;
   width: 100%;
-  height: 85vh; 
-  object-fit: cover; 
-  display: block; 
+  height: 70vh; 
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  z-index: 1;  
+}
+
+
+.hero-overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  width: 80%;
+  max-width: 800px;
+}
+
+.hero-overlay-text h1 {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.hero-overlay-text p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .hero-overlay-text h1 {
+    font-size: 2.5rem;
+  }
+  .hero-overlay-text p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-overlay-text h1 {
+    font-size: 1.8rem;
+  }
+  .hero-overlay-text p {
+    font-size: 1rem;
+  }
+  .hero-overlay-text {
+    width: 90%;
+  }
 }
 
 .services {
